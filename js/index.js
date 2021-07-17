@@ -6,8 +6,10 @@ fetch(`${API_URL}/users`)
 	.then((response) => response.json())
 	.then((users) => {
 		console.log(users);
-		const tp1 = users.map(() => `<li>${users.name}, ${users.email}</li>`);
+		// users tiene informacion
+		const tp1 = users.map((user) => `<li>${user.name}, ${user.email}</li>`);
 		console.log(tp1);
+		// tp1 informacion esta idefenida
 		HTMLResponse.innerHTML = `<ul>${tp1}</ul>`;
 	});
 
